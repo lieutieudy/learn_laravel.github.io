@@ -196,7 +196,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  <!-- footer -->
 		  <div class="footer">
 			<div class="wthree-copyright">
-			  <p>Các bạn xem hướng dẫn tạo project  : <a target="_blank" href="https://www.youtube.com/watch?v=CjA79XhHVQI&list=PLWTu87GngvNxpWN6FVuEcS-YvFNq6RnqG">tại đây nhé</a></p>
+			  {{-- <p>Các bạn xem hướng dẫn tạo project  : <a target="_blank" href="https://www.youtube.com/watch?v=CjA79XhHVQI&list=PLWTu87GngvNxpWN6FVuEcS-YvFNq6RnqG">tại đây nhé</a></p> --}}
 			</div>
 		  </div>
   <!-- / footer -->

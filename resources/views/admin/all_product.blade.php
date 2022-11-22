@@ -3,7 +3,7 @@
     <div class="table-agile-info">
         <div class="panel panel-default">
             <div class="panel-heading">
-                DANH MỤC SẢN PHẨM
+                SẢN PHẨM
             </div>
             <div class="row w3-res-tb">
                 <div class="col-sm-5 m-b-xs">
@@ -42,30 +42,35 @@
                                     <input type="checkbox"><i></i>
                                 </label>
                             </th>
-                            <th>Tên danh mục</th>
-                            <th>Mô tả</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Hình sản phẩm</th>
+                            <th>Danh mục</th>
+                            <th>Thương hiệu</th>
                             <th>Hiển thị</th>
                             <th style="width:30px;"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($all_category_product as $key => $cate_pro)
+                        @foreach ($all_product as $key => $pro)
                             <tr>
                                 <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label>
                                 </td>
-                                <td>{{ $cate_pro->category_name }}</td>
-                                <td><span class="text-ellipsis">
-                                        {{ $cate_pro->category_desc }}
-                                    </span></td>
+                                <td>{{ $pro->product_name }}</td>
+                                <td>{{ $pro->product_price }}</td>
+                                <td><img src="public/uploads/product/{{ $pro->product_image }}" height="100" width="100" alt=""></td>
+                                <td>{{ $pro->category_name }}</td>
+                                <td>{{ $pro->brand_name }}</td>
+                                
                                 <td><span class="text-ellipsis">
                                         <?php
-                                        if($cate_pro->category_status==1){
+                                        if($pro->product_status==1){
                                             ?>
-                                            <a href="{{URL::to('/unactive-category-product/'.$cate_pro->category_id)}}">Ẩn(Đang Hiện)</a>
+                                            <a href="{{URL::to('/unactive-product/'.$pro->product_id)}}">Ẩn(Đang Hiện)</a>
                                             <?php
                                             }else{
                                             ?>  
-                                            <a href="{{URL::to('/active-category-product/'.$cate_pro->category_id)}}">Hiện(Đang Ẩn)</a>
+                                            <a href="{{URL::to('/active-product/'.$pro->brand_id)}}">Hiện(Đang Ẩn)</a>
                                             <?php
                                         }
                                         ?>
@@ -73,10 +78,10 @@
                                         
                                     </span></td>
                                 <td>
-                                    <a href="{{URL::to('/edit-category-product/'.$cate_pro->category_id)}}" class="active" ui-toggle-class="">
+                                    <a href="{{URL::to('/edit-product/'.$pro->product_id)}}" class="active" ui-toggle-class="">
                                         <i class="fa fa-pencil-square-o text-success text-active"></i></a>
 
-                                    <a onclick="return confirm('Bạn chắc không?')" href="{{URL::to('/delete-category-product/'.$cate_pro->category_id)}}" class="active" ui-toggle-class="">
+                                    <a onclick="return confirm('Bạn chắc không?')" href="{{URL::to('/delete-product/'.$pro->product_id)}}" class="active" ui-toggle-class="">
                                         <i class="fa fa-times text-danger text"></i></a>
                                     
                                 </td>
