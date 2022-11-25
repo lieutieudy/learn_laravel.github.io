@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryProduct;
 use App\Http\Controllers\BrandProduct;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +24,7 @@ Route::get('/trang-chu', [HomeController::class, 'index']);
 //Danh mục trang chủ
 Route::get('/danh-muc-san-pham/{category_id}', [CategoryProduct::class, 'show_category_home']);
 Route::get('/thuong-hieu-san-pham/{brand_id}', [BrandProduct::class, 'show_brand_home']);
-
+Route::get('/chi-tiet-san-pham/{product_id}', [ProductController::class, 'details_product']);
 
 //BackEnd
 Route::get('/admin', [AdminController::class, 'index']);
@@ -66,3 +67,6 @@ Route::get('/active-product/{product_id}', [ProductController::class, 'active_pr
 Route::get('/edit-product/{product_id}', [ProductController::class, 'edit_product']);
 Route::post('/update-product/{product_id}', [ProductController::class, 'update_product']);
 Route::get('/delete-product/{product_id}', [ProductController::class, 'delete_product']);
+
+//Cart
+Route::post('/save-cart', [CartController::class, 'save_cart']);

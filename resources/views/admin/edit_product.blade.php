@@ -36,10 +36,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Hình ảnh sản phẩm</label>
-                                    <input type="file" name="product_image" class="form-control"
-                                        id="exampleInputPassword1">
-                                    <img src="{{ URL::to('public/uploads/product/' . $pro->product_image) }}" height="100"
-                                        width="100">
+                                    <input type="file" name="product_image" class="form-control" id="exampleInputPassword1">
+                                    <img src="{{ URL::to('public/uploads/product/' . $pro->product_image) }}" height="100" width="100">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Mô tả sản phẩm</label>
